@@ -109,8 +109,13 @@ function resetResult(){
     return;
 }
 
+// score is stored as [player O , player X ] rez[0]- player O (similarity o~o)
 function addScore(xox){
-   let prevScore ;
+   let prevScore = JSON.parse(localStorage.getItem("rez"));
+   let o = prevScore[0];
+   let x = prevScore[1];
+   if(xox===1){x++}else if(xox===0){o++}
+   localStorage.setItem(JSON.stringify([x,o]));
 }
 
 function testWriteLocalStorage(){
