@@ -90,17 +90,17 @@ function checkWin(){
 
     // console.log([m1,m2,m3,m4,m5,m6,m7,m8,m9])
 
-   if(m1==m2 && m2==m3){  if(m1==='x'){ alert("Player X wins") }else if(m1==='o'){ alert("Player O wins") } }
-   if(m4==m5 && m5==m6){  if(m4==='x'){ alert("Player X wins") }else if(m4==='o'){ alert("Player O wins") } }
-   if(m7==m8 && m8==m9){  if(m8==='x'){ alert("Player X wins") }else if(m8==='o'){ alert("Player O wins") } }
+   if(m1==m2 && m2==m3){  if(m1==='x'){ alert("Player X wins"); addScore(1); }else if(m1==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m4==m5 && m5==m6){  if(m4==='x'){ alert("Player X wins"); addScore(1); }else if(m4==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m7==m8 && m8==m9){  if(m8==='x'){ alert("Player X wins"); addScore(1); }else if(m8==='o'){ alert("Player O wins"); addScore(0); } }
 
-   if(m1==m4 && m4==m7){  if(m1==='x'){ alert("Player X wins") }else if(m1==='o'){ alert("Player O wins") } }
-   if(m2==m5 && m5==m8){  if(m2==='x'){ alert("Player X wins") }else if(m2==='o'){ alert("Player O wins") } }
-   if(m3==m6 && m6==m9){  if(m3==='x'){ alert("Player X wins") }else if(m3==='o'){ alert("Player O wins") } }
+   if(m1==m4 && m4==m7){  if(m1==='x'){ alert("Player X wins"); addScore(1); }else if(m1==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m2==m5 && m5==m8){  if(m2==='x'){ alert("Player X wins"); addScore(1); }else if(m2==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m3==m6 && m6==m9){  if(m3==='x'){ alert("Player X wins"); addScore(1); }else if(m3==='o'){ alert("Player O wins"); addScore(0); } }
    
  
-   if(m1==m5 && m5==m9){  if(m1==='x'){ alert("Player X wins") }else if(m1==='o'){ alert("Player O wins") } }
-   if(m3==m5 && m5==m7){  if(m3==='x'){ alert("Player X wins") }else if(m3==='o'){ alert("Player O wins") } }
+   if(m1==m5 && m5==m9){  if(m1==='x'){ alert("Player X wins"); addScore(1); }else if(m1==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m3==m5 && m5==m7){  if(m3==='x'){ alert("Player X wins"); addScore(1); }else if(m3==='o'){ alert("Player O wins"); addScore(0); } }
    
 }
 
@@ -115,7 +115,8 @@ function addScore(xox){
    let o = prevScore[0];
    let x = prevScore[1];
    if(xox===1){x++}else if(xox===0){o++}
-   localStorage.setItem(JSON.stringify([x,o]));
+   localStorage.setItem("rez",JSON.stringify([o,x]));
+   console.log(localStorage);
 }
 
 function testWriteLocalStorage(){
