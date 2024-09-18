@@ -1,0 +1,18 @@
+{
+  "name": "xox_app",
+  "version": "1.0.0",
+  "description": "XOX app game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "XOX",
+    "game",
+    "js",
+    "css",
+    "html"
+  ],
+  "author": "Nikola Ekmedzic",
+  "license": "ISC"
+}

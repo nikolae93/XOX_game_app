@@ -1,0 +1,147 @@
+/* #test_xo{
+    color: red;
+} */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* HEADER SECTION STYLES*/
+
+header{
+    background-color: silver;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+}
+
+.header_name{
+   margin-left: 20px;
+   width: 20%;
+
+}
+
+.header_name:hover{
+    color: #902bf5;
+    text-decoration: underline;
+    font-size: large;
+    
+}
+
+.header_action_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    margin-right: 20px;
+
+}
+
+#header_btn_ng{
+    background-color: #902bf5;
+    border: 2px solid #5800b1;
+    padding: 10px;
+    color: white;
+}
+
+#header_btn_cr{
+    background-color: #902bf5;
+    border: 2px solid #5800b1;
+    padding: 10px;
+    color: white;
+}
+
+/* END HEADER SECTION STYLES*/
+
+.main_section{
+    width: 100%;
+    height: 90vh;
+}
+
+.main_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.side_left{
+/* background-color: aquamarine; */
+height: 100%;
+width: 10%;
+}
+
+.main_app{
+    /* background-color: #902bf5; */
+    height: 100%;
+    width: 80%;
+    border: 2px solid #5800b1;
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    /* grid-gap: 1%; */
+    min-width: 0;
+    min-height: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.pink_border{
+    border: 2px solid #5800b1;
+}
+
+.side_right{
+    /* background-color: orange; */
+    height: 100%;
+    width: 10%;
+}
+
+.main_img {
+    /* width: 98%;
+    height: 98%; */
+    /* display: inline-block; */
+position: absolute;
+width: 100%;
+height: 100%;
+}
+
+.center_img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* width: 70%;
+    height: 70%; */
+  
+}
+
+/* MAIN SECTION STYLES*/
+
+/*END MAIN SECTION STYLES*/
+
+
+/* FOOTER SECTION STYLES*/
+
+footer{
+    width: 100%;
+    height: 5vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer p{
+    text-align: center;
+    vertical-align: super;
+}
+
+/* END FOOTER SECTION STYLES*/
