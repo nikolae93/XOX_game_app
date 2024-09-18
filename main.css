@@ -48,6 +48,7 @@ header{
     border: 2px solid #5800b1;
     padding: 8px;
     color: white;
+    font-weight: bold;
 }
 
 #header_btn_cr{
@@ -55,6 +56,7 @@ header{
     border: 2px solid #5800b1;
     padding: 8px;
     color: white;
+    font-weight: bold;
 }
 
 /* END HEADER SECTION STYLES*/
@@ -89,7 +91,7 @@ width: 10%;
     min-height: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .pink_border{
@@ -121,9 +123,29 @@ height: 100%;
     height: 70%; */
 }
 
+
+/* Class to mark the winning tiles */
 .win_border{
-    border: 5px solid gold;
+    /* border: 5px solid gold; */
+   
+    box-shadow: 1px 1px 1px 1px #5800b1;
+    animation: pulse-animation 2s infinite;
+    border: 2px solid rgb(33, 161, 184);
+    z-index: 1;
 }
+
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 50px rgba(0, 0, 0, 0);
+    }
+  }
+  
+/*end of addable class in case of the win */
+
+
 
 /* MAIN SECTION STYLES*/
 
