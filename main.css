@@ -119,7 +119,10 @@ height: 100%;
     position: relative;
     /* width: 70%;
     height: 70%; */
-  
+}
+
+.win_border{
+    border: 5px solid gold;
 }
 
 /* MAIN SECTION STYLES*/

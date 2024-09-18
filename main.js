@@ -27,22 +27,31 @@ function checkIfResExist(){
 function clearTable(){
     document.getElementById('m1').src="./img/blank.png";
     document.getElementById('m1').style.pointerEvents = "auto";
+    document.getElementById('m1').classList.remove("win_border");
     document.getElementById('m2').src="./img/blank.png";
     document.getElementById('m2').style.pointerEvents = "auto";
+    document.getElementById('m2').classList.remove("win_border");
     document.getElementById('m3').src="./img/blank.png";
     document.getElementById('m3').style.pointerEvents = "auto";
+    document.getElementById('m3').classList.remove("win_border");
     document.getElementById('m4').src="./img/blank.png";
     document.getElementById('m4').style.pointerEvents = "auto";
+    document.getElementById('m4').classList.remove("win_border");
     document.getElementById('m5').src="./img/blank.png";
     document.getElementById('m5').style.pointerEvents = "auto";
+    document.getElementById('m5').classList.remove("win_border");
     document.getElementById('m6').src="./img/blank.png";
     document.getElementById('m6').style.pointerEvents = "auto";
+    document.getElementById('m6').classList.remove("win_border");
     document.getElementById('m7').src="./img/blank.png";
     document.getElementById('m7').style.pointerEvents = "auto";
+    document.getElementById('m7').classList.remove("win_border");
     document.getElementById('m8').src="./img/blank.png";
     document.getElementById('m8').style.pointerEvents = "auto";
+    document.getElementById('m8').classList.remove("win_border");
     document.getElementById('m9').src="./img/blank.png";
     document.getElementById('m9').style.pointerEvents = "auto";
+    document.getElementById('m9').classList.remove("win_border");
 }
 
 // Setting event listeners for m1-m9 elements
@@ -64,11 +73,9 @@ function clearTable(){
         
         if(e.code =="Enter"){
             e.preventDefault();
-            console.log("mjau");
             clearTable();
-            
         }
-    })
+    });
  // Reset result to 0,0
     document.getElementById("header_btn_cr").addEventListener("click",resetResult);
 
@@ -103,17 +110,17 @@ function checkWin(){
 
     // console.log([m1,m2,m3,m4,m5,m6,m7,m8,m9])
 
-   if(m1==m2 && m2==m3){  if(m1==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m1==='o'){ alert("Player O wins"); addScore(0); LockBoard(); } }
-   if(m4==m5 && m5==m6){  if(m4==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m4==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
-   if(m7==m8 && m8==m9){  if(m8==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m8==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m1==m2 && m2==m3){  if(m1==='x'){ markWin("m1","m2","m3"); addScore(1); LockBoard();}else if(m1==='o'){ addScore(0); LockBoard(); markWin("m1","m2","m3"); } }
+   if(m4==m5 && m5==m6){  if(m4==='x'){ markWin("m4","m5","m6"); addScore(1); LockBoard();}else if(m4==='o'){ addScore(0); LockBoard(); markWin("m4","m5","m6");} }
+   if(m7==m8 && m8==m9){  if(m8==='x'){ markWin("m7","m8","m9"); addScore(1); LockBoard();}else if(m8==='o'){ addScore(0); LockBoard(); markWin("m7","m8","m9");} }
 
-   if(m1==m4 && m4==m7){  if(m1==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m1==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
-   if(m2==m5 && m5==m8){  if(m2==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m2==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
-   if(m3==m6 && m6==m9){  if(m3==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m3==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m1==m4 && m4==m7){  if(m1==='x'){ markWin("m1","m4","m7"); addScore(1); LockBoard();}else if(m1==='o'){ addScore(0); LockBoard(); markWin("m1","m4","m7");} }
+   if(m2==m5 && m5==m8){  if(m2==='x'){ markWin("m2","m5","m8"); addScore(1); LockBoard();}else if(m2==='o'){ addScore(0); LockBoard(); markWin("m2","m5","m8");} }
+   if(m3==m6 && m6==m9){  if(m3==='x'){ markWin("m3","m6","m9"); addScore(1); LockBoard();}else if(m3==='o'){ addScore(0); LockBoard(); markWin("m3","m6","m9");} }
    
  
-   if(m1==m5 && m5==m9){  if(m1==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m1==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
-   if(m3==m5 && m5==m7){  if(m3==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m3==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m1==m5 && m5==m9){  if(m1==='x'){ markWin("m1","m5","m9"); addScore(1); LockBoard();}else if(m1==='o'){ addScore(0); LockBoard(); markWin("m1","m5","m9");} }
+   if(m3==m5 && m5==m7){  if(m3==='x'){ markWin("m3","m5","m7"); addScore(1); LockBoard();}else if(m3==='o'){ addScore(0); LockBoard(); markWin("m3","m5","m7");} }
 
    showScore();
    
@@ -168,7 +175,14 @@ function LockBoard(){
     document.getElementById('m9').style.pointerEvents = "none";
 }
 
-function markWin (){
+// Function to add win_border to winning
+function markWin (x,y,z){
+
+      console.log(x,y,z);
+      document.getElementById(`${x}`).classList.add("win_border");
+      document.getElementById(`${y}`).classList.add("win_border");
+      document.getElementById(`${z}`).classList.add("win_border");
+      return;
 
 }
 
