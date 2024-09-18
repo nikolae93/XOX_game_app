@@ -58,6 +58,17 @@ function clearTable(){
     
 // New game set Event Listener
     document.getElementById("header_btn_ng").addEventListener("click",clearTable);
+
+    // Adding event listener for the whole page in order for starting a new game when the enter button is pressed
+    document.addEventListener("keypress",(e)=>{
+        
+        if(e.code =="Enter"){
+            e.preventDefault();
+            console.log("mjau");
+            clearTable();
+            
+        }
+    })
  // Reset result to 0,0
     document.getElementById("header_btn_cr").addEventListener("click",resetResult);
 
@@ -109,8 +120,22 @@ function checkWin(){
 }
 
 function resetResult(){
-    localStorage.setItem("rez",JSON.stringify([0,0]));
-    return;
+    let c = true;
+    if(confirm("Do you really want to reset the score")){
+      
+    }else{
+        c=false;
+    }
+  
+    if(c){
+        localStorage.setItem("rez",JSON.stringify([0,0]));
+        showScore();
+        clearTable();
+        return;
+    }else{
+        return;
+    }
+
 }
 
 // score is stored as [player O , player X ] rez[0]- player O (similarity o~o)
@@ -142,6 +167,11 @@ function LockBoard(){
     document.getElementById('m8').style.pointerEvents = "none";
     document.getElementById('m9').style.pointerEvents = "none";
 }
+
+function markWin (){
+
+}
+
 
 // Test function to access localStorage during development
 function testWriteLocalStorage(){
