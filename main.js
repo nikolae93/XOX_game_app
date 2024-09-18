@@ -9,12 +9,14 @@ window.onload= ()=>{
 // Function to check if localStorage is already set
 function checkIfResExist(){
     if(localStorage.getItem("rez".length===2)){
-            document.getElementById("pl_1_rez").innerHTML= `Player 1: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
-            document.getElementById("pl_2_rez").innerHTML= `Player 2: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
+            // document.getElementById("pl_1_rez").innerHTML= `Player 1: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
+            // document.getElementById("pl_2_rez").innerHTML= `Player 2: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
+            showScore()
     }else{
         localStorage.setItem("rez",JSON.stringify([0,0]));
-        document.getElementById("pl_1_rez").innerHTML= `Player X: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
-        document.getElementById("pl_2_rez").innerHTML= `Player O: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
+        // document.getElementById("pl_1_rez").innerHTML= `Player X: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
+        // document.getElementById("pl_2_rez").innerHTML= `Player O: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
+        showScore();
 
     }
     return;
@@ -90,17 +92,19 @@ function checkWin(){
 
     // console.log([m1,m2,m3,m4,m5,m6,m7,m8,m9])
 
-   if(m1==m2 && m2==m3){  if(m1==='x'){ alert("Player X wins"); addScore(1); }else if(m1==='o'){ alert("Player O wins"); addScore(0); } }
-   if(m4==m5 && m5==m6){  if(m4==='x'){ alert("Player X wins"); addScore(1); }else if(m4==='o'){ alert("Player O wins"); addScore(0); } }
-   if(m7==m8 && m8==m9){  if(m8==='x'){ alert("Player X wins"); addScore(1); }else if(m8==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m1==m2 && m2==m3){  if(m1==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m1==='o'){ alert("Player O wins"); addScore(0); LockBoard(); } }
+   if(m4==m5 && m5==m6){  if(m4==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m4==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m7==m8 && m8==m9){  if(m8==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m8==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
 
-   if(m1==m4 && m4==m7){  if(m1==='x'){ alert("Player X wins"); addScore(1); }else if(m1==='o'){ alert("Player O wins"); addScore(0); } }
-   if(m2==m5 && m5==m8){  if(m2==='x'){ alert("Player X wins"); addScore(1); }else if(m2==='o'){ alert("Player O wins"); addScore(0); } }
-   if(m3==m6 && m6==m9){  if(m3==='x'){ alert("Player X wins"); addScore(1); }else if(m3==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m1==m4 && m4==m7){  if(m1==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m1==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m2==m5 && m5==m8){  if(m2==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m2==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m3==m6 && m6==m9){  if(m3==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m3==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
    
  
-   if(m1==m5 && m5==m9){  if(m1==='x'){ alert("Player X wins"); addScore(1); }else if(m1==='o'){ alert("Player O wins"); addScore(0); } }
-   if(m3==m5 && m5==m7){  if(m3==='x'){ alert("Player X wins"); addScore(1); }else if(m3==='o'){ alert("Player O wins"); addScore(0); } }
+   if(m1==m5 && m5==m9){  if(m1==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m1==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+   if(m3==m5 && m5==m7){  if(m3==='x'){ alert("Player X wins"); addScore(1); LockBoard();}else if(m3==='o'){ alert("Player O wins"); addScore(0); LockBoard();} }
+
+   showScore();
    
 }
 
@@ -119,6 +123,27 @@ function addScore(xox){
    console.log(localStorage);
 }
 
+// this function main task is to show results on the scoretable
+function showScore(){
+    document.getElementById("pl_1_rez").innerHTML= `Player X: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
+    document.getElementById("pl_2_rez").innerHTML= `Player O: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
+}
+
+
+// function to lock Board in case the game is over
+function LockBoard(){
+    document.getElementById('m1').style.pointerEvents = "none";
+    document.getElementById('m2').style.pointerEvents = "none";
+    document.getElementById('m3').style.pointerEvents = "none";
+    document.getElementById('m4').style.pointerEvents = "none";
+    document.getElementById('m5').style.pointerEvents = "none";
+    document.getElementById('m6').style.pointerEvents = "none";
+    document.getElementById('m7').style.pointerEvents = "none";
+    document.getElementById('m8').style.pointerEvents = "none";
+    document.getElementById('m9').style.pointerEvents = "none";
+}
+
+// Test function to access localStorage during development
 function testWriteLocalStorage(){
     console.log(localStorage);
 }
