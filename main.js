@@ -9,13 +9,9 @@ window.onload= ()=>{
 // Function to check if localStorage is already set
 function checkIfResExist(){
     if(localStorage.getItem("rez".length===2)){
-            // document.getElementById("pl_1_rez").innerHTML= `Player 1: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
-            // document.getElementById("pl_2_rez").innerHTML= `Player 2: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
             showScore()
     }else{
         localStorage.setItem("rez",JSON.stringify([0,0]));
-        // document.getElementById("pl_1_rez").innerHTML= `Player X: ${JSON.parse(localStorage.getItem("rez"))[0]}`;
-        // document.getElementById("pl_2_rez").innerHTML= `Player O: ${JSON.parse(localStorage.getItem("rez"))[1]}`;
         showScore();
 
     }
@@ -108,7 +104,6 @@ function checkWin(){
     let m8 = document.getElementById("m8").src.slice(-5)[0];
     let m9 = document.getElementById("m9").src.slice(-5)[0];
 
-    // console.log([m1,m2,m3,m4,m5,m6,m7,m8,m9])
 
    if(m1==m2 && m2==m3){  if(m1==='x'){ markWin("m1","m2","m3"); addScore(1); LockBoard();}else if(m1==='o'){ addScore(0); LockBoard(); markWin("m1","m2","m3"); } }
    if(m4==m5 && m5==m6){  if(m4==='x'){ markWin("m4","m5","m6"); addScore(1); LockBoard();}else if(m4==='o'){ addScore(0); LockBoard(); markWin("m4","m5","m6");} }
@@ -122,6 +117,7 @@ function checkWin(){
    if(m1==m5 && m5==m9){  if(m1==='x'){ markWin("m1","m5","m9"); addScore(1); LockBoard();}else if(m1==='o'){ addScore(0); LockBoard(); markWin("m1","m5","m9");} }
    if(m3==m5 && m5==m7){  if(m3==='x'){ markWin("m3","m5","m7"); addScore(1); LockBoard();}else if(m3==='o'){ addScore(0); LockBoard(); markWin("m3","m5","m7");} }
 
+   // Calling function to display the results
    showScore();
    
 }
@@ -129,7 +125,6 @@ function checkWin(){
 function resetResult(){
     let c = true;
     if(confirm("Do you really want to reset the score")){
-      
     }else{
         c=false;
     }
@@ -193,14 +188,8 @@ function testWriteLocalStorage(){
 }
 
 
-
-
-// document.getElementById("m1").addEventListener("click",()=>{document.getElementById("m1").src = "./img/x.png"});
-//  document.getElementById("m1").addEventListener("click",(event)=>{ console.log( event.target.id) });
-
 let curr_rez = JSON.parse(localStorage.getItem("rez"));
 
-// console.log(curr_rez);
 
 
 
