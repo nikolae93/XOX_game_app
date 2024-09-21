@@ -4,14 +4,16 @@
   "description": "XOX app game",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-node": "npm run main.js"
   },
   "keywords": [
     "XOX",
     "game",
     "js",
     "css",
-    "html"
+    "html",
+    "responsive"
   ],
   "author": "Nikola Ekmedzic",
   "license": "ISC"

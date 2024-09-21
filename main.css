@@ -1,9 +1,19 @@
 
+/* Global styles */
+
 *{
     margin: 0px;
     padding: 0px;
 }
 
+/* Global styles */
+
+/*
+
+    Lighter color   #902bf5   - dark violet
+    Darker color    #5800b1   - light violet
+
+*/
 
 /* HEADER SECTION STYLES*/
 
@@ -17,11 +27,13 @@ header{
     height: 5vh;
 }
 
+/*LOGO*/
 .header_name{
    margin-left: 20px;
    width: 20%;
 
 }
+/*END OF LOGO*/
 
 .header_name:hover{
     color: #902bf5;
@@ -40,6 +52,8 @@ header{
 
 }
 
+/*Buttons*/
+
 #header_btn_ng{
     background-color: #902bf5;
     border: 2px solid #5800b1;
@@ -55,8 +69,11 @@ header{
     color: white;
     font-weight: bold;
 }
+/*Buttons*/
 
 /* END HEADER SECTION STYLES*/
+
+/* MAIN SECTION STYLES*/
 
 .main_section{
     width: 100%;
@@ -75,6 +92,7 @@ header{
     width: 10%;
 }
 
+/*Main css grid element*/
 .main_app{
    
     height: 100%;
@@ -89,6 +107,7 @@ header{
     height: 100%;
    
 }
+/*END OF Main css grid element*/
 
 .pink_border{
     border: 2px solid #5800b1;
@@ -106,13 +125,13 @@ header{
     height: 100%;
 }
 
+/*Wrapping div element for a image*/ 
 .center_img{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     position: relative;
-
 }
 
 
@@ -132,12 +151,8 @@ header{
       box-shadow: 0 0 0 50px rgba(0, 0, 0, 0);
     }
   }
-  
 /*end of addable class in case of the win */
 
-
-
-/* MAIN SECTION STYLES*/
 
 /*END MAIN SECTION STYLES*/
 
@@ -177,13 +192,6 @@ footer p{
 
     }
     
-    /* .header_name{
-       margin-left: 20px;
-       width: 20%;
-    
-    } */
-    
- 
     .header_action_section{
         display: flex;
         flex-direction: column;

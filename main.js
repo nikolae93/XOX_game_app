@@ -147,7 +147,7 @@ function addScore(xox){
    let x = prevScore[1];
    if(xox===1){x++}else if(xox===0){o++}
    localStorage.setItem("rez",JSON.stringify([o,x]));
-   console.log(localStorage);
+  // console.log(localStorage);
 }
 
 // this function main task is to show results on the scoretable
@@ -173,7 +173,7 @@ function LockBoard(){
 // Function to add win_border to winning
 function markWin (x,y,z){
 
-      console.log(x,y,z);
+    //  console.log(x,y,z);
       document.getElementById(`${x}`).classList.add("win_border");
       document.getElementById(`${y}`).classList.add("win_border");
       document.getElementById(`${z}`).classList.add("win_border");
